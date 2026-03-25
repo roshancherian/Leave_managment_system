@@ -1,0 +1,12 @@
+package com.leave.management.repository;
+
+import com.leave.management.entity.LeaveRequest;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface LeaveRepository extends JpaRepository<LeaveRequest, Integer> {
+
+    List<LeaveRequest> findByEmployeeId(Integer employeeId);
+
+    List<LeaveRequest> findByCurrentApproverId(Integer managerId);
+}
